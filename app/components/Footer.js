@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Linkedin, Twitter, Mail } from 'lucide-react';
 
 export default function Footer() {
@@ -9,10 +10,19 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center glow-border">
-                <span className="text-white font-bold text-xl">B</span>
+              {/* Desktop Logo */}
+              <div className=" md:block w-14 h-14 relative">
+                <Image 
+                  src="/logobp.png" 
+                  alt="Black Pearl Studios Logo" 
+                  width={120}
+                  height={120}
+                  className="object-contain"
+                />
               </div>
-              <span className="text-xl font-bold text-black glow-text-sm">Blackpearl</span>
+              {/* Mobile Logo */}
+             
+             
             </div>
             <p className="text-black/60 text-sm mb-4 leading-relaxed">
               Your One-Stop Printing, IT & AI Studio in Doha Mall, Qatar.

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" fill="#FFFFFF"/>
+  <!-- Black Pearl Symbol Simplified for Icon -->
+  <g transform="translate(256, 256)">
+    <!-- Outer circle -->
+    <circle cx="0" cy="0" r="200" fill="none" stroke="#000000" stroke-width="25"/>
+    
+    <!-- Inner pearl -->
+    <circle cx="0" cy="0" r="120" fill="#000000"/>
+    <circle cx="0" cy="0" r="60" fill="#000000"/>
+    <circle cx="15" cy="-15" r="15" fill="#FFFFFF"/>
+    
+    <!-- Swirl petals around -->
+    <path d="M 0,-200 Q 150,-150 120,-50 Q 80,0 0,0" fill="#000000"/>
+    <path d="M 141,-141 Q 150,50 70,70 Q 0,50 0,0" fill="#000000"/>
+    <path d="M 200,0 Q 150,150 50,120 Q 0,80 0,0" fill="#000000"/>
+    <path d="M 141,141 Q -50,150 -70,70 Q -50,0 0,0" fill="#000000"/>
+    <path d="M 0,200 Q -150,150 -120,50 Q -80,0 0,0" fill="#000000"/>
+    <path d="M -141,141 Q -150,-50 -70,-70 Q 0,-50 0,0" fill="#000000"/>
+    <path d="M -200,0 Q -150,-150 -50,-120 Q 0,-80 0,0" fill="#000000"/>
+    <path d="M -141,-141 Q 50,-150 70,-70 Q 50,0 0,0" fill="#000000"/>
+  </g>
+</svg>
+

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { Home, Lightbulb, Zap, Printer, BarChart3, Mail, Menu, X } from 'lucide-react';
 
@@ -37,12 +38,19 @@ export default function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-10 h-10 bg-black rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-all glow-border">
-              <span className="text-white font-bold text-xl">B</span>
+            {/* Desktop Logo */}
+            <div className=" md:block w-16 h-16 relative transform group-hover:scale-110 transition-all">
+              <Image 
+                src="/logobp.png" 
+                alt="Black Pearl Studios Logo" 
+                width={120}
+                height={120}
+             
+                priority
+              />
             </div>
-            <span className="text-2xl font-bold text-black glow-text-sm group-hover:glow-text transition-all">
-              Blackpearl
-            </span>
+            {/* Mobile Logo */}
+            
           </Link>
           
           {/* Desktop Navigation */}
