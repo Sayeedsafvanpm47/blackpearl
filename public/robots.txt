@@ -1,0 +1,10 @@
+# robots.txt for Black Pearl
+User-agent: *
+Allow: /
+
+# Disallow admin or private pages if any
+# Disallow: /admin
+
+# Sitemap location
+Sitemap: https://blackpearl.com/sitemap.xml
+

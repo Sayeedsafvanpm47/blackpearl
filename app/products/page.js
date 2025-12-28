@@ -4,6 +4,15 @@ import Footer from '../components/Footer';
 import PaperTexture from '../components/PaperTexture';
 import { Bot, Settings, BarChart3, Lock, Globe, ArrowRight, Check, Zap } from 'lucide-react';
 
+export const metadata = {
+  title: 'Products',
+  description: 'Explore Black Pearl\'s product portfolio including Bebop AI Platform and Pearl Engine. Enterprise solutions and AI-powered tools for modern businesses.',
+  openGraph: {
+    title: 'Our Products - AI Solutions & Enterprise Tools',
+    description: 'Discover our flagship products: Bebop AI Platform and Pearl Engine for enterprise automation.',
+  },
+};
+
 export default function Products() {
   return (
     <>

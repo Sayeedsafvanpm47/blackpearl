@@ -5,6 +5,15 @@ import AnimatedBackground from './components/AnimatedBackground';
 import PaperTexture from './components/PaperTexture';
 import { Rocket, Zap, Bot, TrendingUp, ArrowRight, ChevronDown, Printer, Settings, Globe, Megaphone, Languages, Sparkles, Package, Camera, CheckCircle, Clock, MapPin, Truck } from 'lucide-react';
 
+export const metadata = {
+  title: 'Home',
+  description: 'Black Pearl - Your one-stop printing, IT automation, digital marketing, and AI studio in Doha Mall, Qatar. Print online, automate workflows, and grow your business.',
+  openGraph: {
+    title: 'Black Pearl - Printing, IT & AI Studio in Doha Mall',
+    description: 'From instant print services to smart business automation for SMEs. Located in Doha Mall, Qatar.',
+  },
+};
+
 export default function Home() {
   return (
     <>

@@ -3,6 +3,15 @@ import Footer from '../components/Footer';
 import PaperTexture from '../components/PaperTexture';
 import { Zap, Rocket, Target, Sparkles, MapPin } from 'lucide-react';
 
+export const metadata = {
+  title: 'About Us',
+  description: 'Learn about Black Pearl - A Wellington-based startup combining print, digital, and automation services. Bridging traditional and digital business solutions for growing companies.',
+  openGraph: {
+    title: 'About Black Pearl - Our Story & Values',
+    description: 'A Wellington startup bringing print, digital, and automation services under one roof. Learn about our mission and values.',
+  },
+};
+
 export default function About() {
   return (
     <>

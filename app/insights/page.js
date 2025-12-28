@@ -4,6 +4,16 @@ import Footer from '../components/Footer';
 import PaperTexture from '../components/PaperTexture';
 import { Bot, Zap, BarChart3, Rocket, TrendingUp, DollarSign, Calendar, ArrowRight, Mail } from 'lucide-react';
 
+export const metadata = {
+  title: 'Insights & Blog',
+  description: 'Stay updated with Black Pearl\'s latest news, insights, and thought leadership. Learn about business automation, digital transformation, and industry trends.',
+  keywords: ['business insights', 'digital transformation', 'automation trends', 'SME growth', 'technology blog', 'business news Qatar'],
+  openGraph: {
+    title: 'Insights & News - Black Pearl Blog',
+    description: 'Latest articles, updates, and insights about business automation, digital solutions, and industry trends.',
+  },
+};
+
 export default function Insights() {
   const latestNews = [
     {

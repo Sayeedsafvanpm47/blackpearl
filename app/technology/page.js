@@ -3,6 +3,16 @@ import Footer from '../components/Footer';
 import PaperTexture from '../components/PaperTexture';
 import { Bot, Cloud, Shield, BarChart3, Link2, Settings, Code, Database, Server, Box, Cable, Lock } from 'lucide-react';
 
+export const metadata = {
+  title: 'Technology',
+  description: 'Discover the cutting-edge technology stack powering Black Pearl. AI, cloud infrastructure, cybersecurity, and enterprise solutions for modern businesses.',
+  keywords: ['AI technology', 'cloud infrastructure', 'cybersecurity', 'enterprise solutions', 'tech stack', 'business technology'],
+  openGraph: {
+    title: 'Our Technology Stack - Innovation at Scale',
+    description: 'Explore the advanced technology and infrastructure behind Black Pearl\'s services.',
+  },
+};
+
 export default function Technology() {
   const technologies = [
     {
