@@ -1,172 +1,135 @@
+import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Bot, Zap, BarChart3, Rocket, TrendingUp, DollarSign, Calendar, ArrowRight } from 'lucide-react';
+import PaperTexture from '../components/PaperTexture';
+import { Bot, Zap, BarChart3, Rocket, TrendingUp, DollarSign, Calendar, ArrowRight, Mail } from 'lucide-react';
 
 export default function Insights() {
-  const insights = [
+  const latestNews = [
     {
-      date: 'October 15, 2025',
-      category: 'Investor Update',
-      title: 'Q2 FY26 Investor Update',
-      description: 'Blackpearl Group (BPG) today presents its results for the second quarter ending on 30 September 2025, demonstrating continued growth and strategic advancements.',
-      color: 'from-[#00BFFF] to-[#8A2BE2]'
+      date: 'December 2024',
+      title: 'Black Pearl Launches in Doha Mall',
+      description: 'We are excited to announce the opening of our new location at Doha Mall, bringing comprehensive print, digital, and automation services to Qatar businesses.',
+      icon: Rocket,
+      category: 'Company News'
     },
     {
-      date: 'October 7, 2025',
-      category: 'Announcement',
-      title: 'Blackpearl Capital Raising Oversubscribed',
-      description: 'Blackpearl Group Limited (NZX: BPG) is pleased to announce the successful completion of its capital raising, with commitments to issue the remaining capacity from its $15 million capital raising (Offer) announced on 12 August 2025.',
-      color: 'from-[#8A2BE2] to-[#00FFAA]'
+      date: 'January 2025',
+      title: 'Introducing Business Automation Services',
+      description: 'Launch of our n8n-powered automation packages designed to help SMEs streamline operations and reduce manual workload.',
+      icon: Zap,
+      category: 'Product Launch'
     },
     {
-      date: 'July 21, 2025',
-      category: 'Investor Update',
-      title: 'Q1 FY26 Investor Update',
-      description: 'Blackpearl Group (BPG) today presents its results for the first quarter ending on 30 June 2025, demonstrating continued growth and strategic advancements.',
-      color: 'from-[#00FFAA] to-[#00BFFF]'
+      date: 'Ongoing',
+      title: 'Growing with Qatar Businesses',
+      description: 'We continue to serve and partner with local businesses, offering integrated solutions that drive growth and efficiency.',
+      icon: TrendingUp,
+      category: 'Business Update'
     }
   ];
 
-  const articles = [
+  const thoughtLeadership = [
     {
       icon: Bot,
-      title: 'The Future of AI in Business',
-      excerpt: 'How artificial intelligence is reshaping the enterprise landscape and creating new opportunities for growth.',
-      category: 'Technology',
-      readTime: '5 min read'
+      title: 'The Future of Business Automation',
+      excerpt: 'How AI and automation are transforming small businesses and making enterprise-level capabilities accessible to everyone.',
+      readTime: '5 min read',
+      date: 'Jan 15, 2025'
     },
     {
       icon: Zap,
-      title: 'Innovating at Hyper-Speed',
-      excerpt: 'Strategies for rapid innovation and staying ahead in the fastest evolving market in human history.',
-      category: 'Innovation',
-      readTime: '7 min read'
+      title: 'Digital Marketing in 2025',
+      excerpt: 'Essential strategies for local businesses to compete in Qatar\'s digital-first marketplace.',
+      readTime: '7 min read',
+      date: 'Jan 10, 2025'
     },
     {
       icon: BarChart3,
-      title: 'Data-Driven Decision Making',
-      excerpt: 'Leveraging analytics and AI to make informed business decisions that drive revenue and growth.',
-      category: 'Analytics',
-      readTime: '6 min read'
+      title: 'Print vs Digital: Finding the Right Balance',
+      excerpt: 'Why traditional print still matters in a digital world and how to integrate both for maximum impact.',
+      readTime: '6 min read',
+      date: 'Jan 5, 2025'
     },
     {
       icon: Rocket,
-      title: 'Scaling Your Startup',
-      excerpt: 'Best practices for entrepreneurs looking to scale their platforms and reach full potential.',
-      category: 'Entrepreneurship',
-      readTime: '8 min read'
+      title: 'Starting a Business in Qatar',
+      excerpt: 'A practical guide to essential services every new business needs, from printing to digital presence.',
+      readTime: '8 min read',
+      date: 'Dec 28, 2024'
     }
   ];
 
   return (
     <>
+      <PaperTexture />
       <Header />
-      <main className="bg-[#000000] pt-20">
+      <main className="bg-transparent pt-20 relative">
         {/* Hero Section */}
         <section className="relative py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-black"></div>
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/10 glow-border rounded-full filter blur-[120px]"></div>
+          <div className="absolute inset-0 bg-transparent"></div>
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-black/5 glow-border rounded-full filter blur-[120px]"></div>
           
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-6">
-              <span className="text-sm uppercase tracking-wider text-white glow-text-sm font-semibold">Insights & News</span>
-              <h1 className="text-5xl lg:text-7xl font-bold text-white">
-                Stay Informed
+              <span className="text-sm uppercase tracking-wider text-black glow-text-sm font-semibold">Insights & Updates</span>
+              <h1 className="text-5xl lg:text-7xl font-bold text-black">
+                News & Insights
               </h1>
-              <p className="text-xl lg:text-2xl text-white/70 leading-relaxed">
-                Latest updates, insights, and announcements from Blackpearl
+              <p className="text-xl lg:text-2xl text-black/70 leading-relaxed">
+                Stay updated with the latest from Black Pearl and industry trends
               </p>
             </div>
           </div>
         </section>
 
         {/* Latest News */}
-        <section className="py-24 bg-black">
-          <div className="container mx-auto px-6">
-            <div className="max-w-5xl mx-auto">
-              <div className="mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">Latest News</h2>
-                <p className="text-xl text-white/70">Recent announcements and updates</p>
-              </div>
-
-              <div className="space-y-6">
-                {insights.map((item, index) => (
-                  <div
-                    key={index}
-                    className="group p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-white/20 transition-all cursor-pointer"
-                  >
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-                      <div className="flex-1 space-y-3">
-                        <div className="flex items-center space-x-4">
-                          <span className="text-sm text-white/50">{item.date}</span>
-                          <span className={`px-3 py-1 text-xs font-semibold rounded-full bg-gradient-to-r ${item.color} text-white`}>
-                            {item.category}
-                          </span>
-                        </div>
-                        <h3 className="text-2xl lg:text-3xl font-bold text-white group-hover:text-white glow-text-sm transition-colors">
-                          {item.title}
-                        </h3>
-                        <p className="text-white/70 leading-relaxed text-lg">
-                          {item.description}
-                        </p>
-                        <button className="inline-flex items-center space-x-2 text-white glow-text-sm font-semibold group-hover:space-x-3 transition-all">
-                          <span>Read more</span>
-                          <ArrowRight className="w-5 h-5" />
-                        </button>
-                      </div>
-                      <div>
-                        {index === 0 ? (
-                          <TrendingUp className="w-12 h-12 text-white glow-text-sm" />
-                        ) : index === 1 ? (
-                          <DollarSign className="w-12 h-12 text-white glow-text-sm" />
-                        ) : (
-                          <Calendar className="w-12 h-12 text-white glow-text-sm" />
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Articles & Insights */}
-        <section className="py-24 bg-[#111]">
+        <section className="py-24 bg-transparent border-t border-black/10">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               <div className="mb-16">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">Thought Leadership</h2>
-                <p className="text-xl text-white/70">Insights on technology, innovation, and business growth</p>
+                <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4">Latest News</h2>
+                <p className="text-xl text-black/70">Company updates and announcements</p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                {articles.map((article, index) => {
-                  const IconComponent = article.icon;
+              <div className="space-y-6">
+                {latestNews.map((news, index) => {
+                  const IconComponent = news.icon;
                   return (
                     <div
                       key={index}
-                      className="group p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 hover:border-white/50 glow-border transition-all cursor-pointer"
+                      className="group p-8 bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl hover:border-black/30 hover:bg-white/80 transition-all cursor-pointer shadow-sm"
                     >
-                      <div className="mb-4">
-                        <IconComponent className="w-12 h-12 text-white glow-text-sm" />
-                      </div>
-                      <div className="space-y-3">
-                        <div className="flex items-center space-x-3 text-sm">
-                          <span className="text-white glow-text-sm font-semibold">{article.category}</span>
-                          <span className="text-white/40">•</span>
-                          <span className="text-white/50">{article.readTime}</span>
+                      <div className="flex flex-col md:flex-row gap-6 items-start">
+                        <div className="flex-shrink-0">
+                          <div className="p-4 bg-black rounded-xl group-hover:shadow-lg transition-all">
+                            <IconComponent className="w-8 h-8 text-white" strokeWidth={1.5} />
+                          </div>
                         </div>
-                        <h3 className="text-2xl font-bold text-white group-hover:text-white glow-text-sm transition-colors">
-                          {article.title}
-                        </h3>
-                        <p className="text-white/70 leading-relaxed">
-                          {article.excerpt}
-                        </p>
-                        <button className="inline-flex items-center space-x-2 text-white glow-text-sm font-semibold group-hover:space-x-3 transition-all pt-2">
-                          <span>Read article</span>
-                          <ArrowRight className="w-5 h-5" />
-                        </button>
+                        <div className="flex-1">
+                          <div className="flex items-center gap-3 mb-3">
+                            <span className="px-3 py-1 bg-black/5 border border-black/20 rounded-full text-xs font-semibold text-black">
+                              {news.category}
+                            </span>
+                            <span className="flex items-center text-sm text-black/60">
+                              <Calendar className="w-4 h-4 mr-2" />
+                              {news.date}
+                            </span>
+                          </div>
+                          <h3 className="text-2xl font-bold text-black mb-3 group-hover:glow-text-sm transition-all">
+                            {news.title}
+                          </h3>
+                          <p className="text-black/70 leading-relaxed mb-4">
+                            {news.description}
+                          </p>
+                          <Link
+                            href="/contact"
+                            className="inline-flex items-center space-x-2 text-black font-semibold hover:glow-text-sm transition-all"
+                          >
+                            <span>Learn more</span>
+                            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   );
@@ -176,34 +139,105 @@ export default function Insights() {
           </div>
         </section>
 
+        {/* Thought Leadership */}
+        <section className="py-24 bg-black/[0.02] border-t border-black/10">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              <div className="mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4">Thought Leadership</h2>
+                <p className="text-xl text-black/70">Industry insights and expert perspectives</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                {thoughtLeadership.map((article, index) => {
+                  const IconComponent = article.icon;
+                  return (
+                    <div
+                      key={index}
+                      className="group p-8 bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl hover:border-black/30 hover:bg-white/80 transition-all cursor-pointer shadow-sm"
+                    >
+                      <div className="mb-6">
+                        <IconComponent className="w-12 h-12 text-black group-hover:glow-icon transition-all" strokeWidth={1.5} />
+                      </div>
+                      <h3 className="text-2xl font-bold text-black mb-3 group-hover:glow-text-sm transition-all">
+                        {article.title}
+                      </h3>
+                      <p className="text-black/70 leading-relaxed mb-4">
+                        {article.excerpt}
+                      </p>
+                      <div className="flex items-center justify-between text-sm text-black/60 mb-4">
+                        <span>{article.date}</span>
+                        <span>{article.readTime}</span>
+                      </div>
+                      <Link
+                        href="/contact"
+                        className="inline-flex items-center space-x-2 text-black font-semibold hover:glow-text-sm transition-all"
+                      >
+                        <span>Read article</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Newsletter Section */}
-        <section className="py-24 bg-black">
+        <section className="py-24 bg-transparent border-t border-black/10">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
-              <div className="bg-gradient-to-br from-[#0a0a0a] to-[#111] border border-white/10 rounded-3xl p-8 lg:p-16 text-center space-y-6">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white">
-                  Subscribe to Our Newsletter
+              <div className="bg-white/60 backdrop-blur-sm border border-black/10 rounded-3xl p-8 lg:p-16 text-center shadow-sm">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-black rounded-2xl mb-6">
+                  <Mail className="w-8 h-8 text-white" strokeWidth={1.5} />
+                </div>
+                <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">
+                  Stay in the Loop
                 </h2>
-                <p className="text-xl text-white/70">
-                  Get the latest insights, updates, and announcements delivered to your inbox
+                <p className="text-xl text-black/70 mb-8 max-w-2xl mx-auto">
+                  Subscribe to our newsletter for the latest updates, industry insights, and special offers.
                 </p>
                 <form className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
                   <input
                     type="email"
                     placeholder="Enter your email"
-                    className="flex-1 px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-white glow-border transition-colors"
+                    className="flex-1 px-6 py-4 bg-white/80 border border-black/10 rounded-lg text-black placeholder-black/40 focus:outline-none focus:border-black transition-all"
                   />
                   <button
                     type="submit"
-                    className="px-8 py-4 bg-white text-black glow-button font-semibold rounded-lg hover:shadow-lg hover:shadow-white/50 transition-all whitespace-nowrap"
+                    className="px-8 py-4 bg-black text-white font-semibold rounded-lg hover:shadow-lg transition-all transform hover:scale-105 whitespace-nowrap"
                   >
                     Subscribe
                   </button>
                 </form>
-                <p className="text-sm text-white/40">
-                  No spam. Unsubscribe at any time.
+                <p className="text-sm text-black/50 mt-4">
+                  We respect your privacy. Unsubscribe anytime.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-32 bg-black/[0.02] border-t border-black/10 relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-black/5 glow-border rounded-full filter blur-[150px]"></div>
+          
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-3xl mx-auto text-center space-y-8">
+              <h2 className="text-4xl lg:text-5xl font-bold text-black">
+                Have a Story to Share?
+              </h2>
+              <p className="text-xl text-black/70">
+                We'd love to hear from you. Get in touch to discuss partnerships, collaborations, or media inquiries.
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center space-x-2 px-10 py-5 bg-black text-white font-semibold rounded-lg hover:shadow-2xl hover:shadow-black/30 transition-all transform hover:scale-105"
+              >
+                <span>Contact Us</span>
+                <ArrowRight className="w-5 h-5" />
+              </Link>
             </div>
           </div>
         </section>
@@ -212,4 +246,3 @@ export default function Insights() {
     </>
   );
 }
-

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import PaperTexture from '../components/PaperTexture';
 import { Printer, Globe, Cog, Check, ArrowRight, FileText, Camera, Coffee, Megaphone, BarChart3, Mail, Workflow, FileSpreadsheet, Bell, Receipt, ChevronDown } from 'lucide-react';
 
 export default function Services() {
@@ -102,171 +103,246 @@ export default function Services() {
   const automationServices = [
     {
       title: 'Automated Social Media Posting',
-      description: 'Scheduled and AI-assisted posting across platforms.',
+      description: 'Schedule and publish content automatically across all platforms.',
       icon: Megaphone
     },
     {
-      title: 'Automated Sales Report Generation',
-      description: 'Daily, weekly, and monthly sales reports — auto-generated and formatted.',
+      title: 'Sales Report Generation & Modification',
+      description: 'Automated data collection, visualization, and report customization.',
       icon: FileSpreadsheet
     },
     {
       title: 'Automated Email Campaigns',
-      description: 'Lead nurturing, follow-ups, and internal notifications.',
+      description: 'Triggered emails, sequences, and personalized messaging at scale.',
       icon: Mail
     },
     {
       title: 'CRM & Lead Automation',
-      description: 'Lead capture, tagging, and follow-up workflows.',
+      description: 'Lead scoring, routing, and automated follow-up workflows.',
       icon: Workflow
     },
     {
       title: 'Invoicing & Billing Automation',
-      description: 'Auto-generated invoices, reminders, and payment tracking.',
+      description: 'Automatic invoice generation, reminders, and payment tracking.',
       icon: Receipt
     },
     {
       title: 'Internal Workflow Automation',
-      description: 'Task assignments, approvals, and internal alerts.',
+      description: 'Custom task automation, approval flows, and team notifications.',
       icon: Bell
     },
     {
       title: 'Custom n8n Automation Bundles',
-      description: 'Tailored automations designed for SMEs to reduce manpower and errors.',
+      description: 'Tailored automation solutions built with n8n for your specific needs.',
       icon: Cog
     }
   ];
 
   const whyChooseUs = [
     {
-      title: 'End-to-End Solutions',
-      description: 'Complete business solutions from concept to execution'
+      icon: Check,
+      title: 'One-Stop Solution',
+      description: 'Print, digital, and automation under one roof'
     },
     {
-      title: 'Print + Digital Under One Roof',
-      description: 'Seamless integration of physical and digital services'
+      icon: ArrowRight,
+      title: 'Fast Turnaround',
+      description: 'Quick delivery without compromising quality'
     },
     {
-      title: 'Automation-First Approach',
-      description: 'Smart systems that scale your business efficiently'
+      icon: Globe,
+      title: 'Modern Technology',
+      description: 'Latest tools and cutting-edge solutions'
     },
     {
-      title: 'SME-Focused Cost Optimization',
-      description: 'Affordable solutions tailored for small to medium enterprises'
+      icon: BarChart3,
+      title: 'Proven Results',
+      description: 'Track record of successful projects'
     },
     {
-      title: 'Reliable Support & Execution',
-      description: 'Dedicated team ensuring consistent quality delivery'
+      icon: Cog,
+      title: 'Custom Solutions',
+      description: 'Tailored to your specific business needs'
     },
     {
-      title: 'Proven Track Record',
-      description: 'Years of experience serving diverse business needs'
+      icon: Megaphone,
+      title: 'Expert Team',
+      description: 'Experienced professionals dedicated to your success'
     }
   ];
 
   return (
     <>
+      <PaperTexture />
       <Header />
-      <main className="bg-black pt-20">
+      <main className="bg-transparent pt-20 relative">
         {/* Hero Section */}
-        <section className="relative py-32 overflow-hidden border-b border-white/10">
-          <div className="container mx-auto px-6">
+        <section 
+          id="hero"
+          ref={el => sectionRefs.current['hero'] = el}
+          className={`relative py-32 overflow-hidden transition-opacity duration-700 ${
+            visibleSections['hero'] ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <div className="absolute inset-0 bg-transparent"></div>
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-black/5 glow-border rounded-full filter blur-[120px]"></div>
+          
+          <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-6">
-              <h1 className="text-5xl lg:text-7xl font-bold text-white glow-text leading-tight animate-fade-in-up">
-                Services Designed for<br />Modern Businesses
+              <div className="h-px w-24 bg-black/30 mx-auto animate-width-expand"></div>
+              <h1 className="text-5xl lg:text-7xl font-bold text-black animate-fade-in-up">
+                Our Services
               </h1>
-              <div className="w-24 h-1 bg-white mx-auto glow-border animate-width-expand"></div>
-              <p className="text-xl lg:text-2xl text-white/70 leading-relaxed animate-fade-in-up-delay">
-                From print to digital, automation to growth — everything under one roof.
+              <p className="text-xl lg:text-2xl text-black/70 leading-relaxed animate-fade-in-up-delay">
+                Professional, interactive, and designed for modern businesses
               </p>
             </div>
           </div>
         </section>
 
-        {/* Creative & Print Studio Section - Horizontal Scroll */}
+        {/* Creative & Print Studio */}
         <section 
-          id="print-section"
+          id="print"
           ref={el => sectionRefs.current['print'] = el}
-          className={`py-24 border-b border-white/10 transition-all duration-700 ${visibleSections['print-section'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          className={`py-24 bg-transparent border-t border-black/10 transition-opacity duration-700 ${
+            visibleSections['print'] ? 'opacity-100' : 'opacity-0'
+          }`}
         >
           <div className="container mx-auto px-6">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-8 glow-text-sm">
-              Creative & Print Studio
-            </h2>
-            
-            <div className="relative">
-              {/* Custom aesthetic scrollbar */}
-              <div className="overflow-x-auto custom-scrollbar pb-4">
-                <div className="flex space-x-6 min-w-max">
+            <div className="max-w-7xl mx-auto">
+              <div className="mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4">Creative & Print Studio</h2>
+                <p className="text-xl text-black/70">From documents to merchandise—we print it all.</p>
+              </div>
+
+              <div className="relative">
+                <div className="flex overflow-x-auto gap-6 pb-6 custom-scrollbar">
                   {printServices.map((service, index) => {
                     const IconComponent = service.icon;
                     return (
                       <div
                         key={index}
-                        className="group w-80 p-8 bg-black border border-white/10 rounded-lg hover:scale-[1.02] hover:border-white/40 transition-all duration-300 cursor-pointer"
-                        style={{ transitionDelay: `${index * 50}ms` }}
+                        className="group min-w-[320px] p-8 bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl hover:border-black/30 hover:bg-white/80 transition-all duration-300 cursor-pointer shadow-sm"
+                        style={{ animationDelay: `${index * 50}ms` }}
                       >
-                        <div className="mb-6 opacity-50 group-hover:opacity-100 transition-opacity duration-300">
-                          <IconComponent className="w-12 h-12 text-white" strokeWidth={1} />
-                        </div>
-                        <div className="relative">
-                          <h3 className="text-2xl font-bold text-white mb-3 relative">
-                            {service.title}
-                            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-400"></span>
-                          </h3>
-                        </div>
-                        <p className="text-white/0 group-hover:text-white/70 leading-relaxed transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                        <IconComponent className="w-12 h-12 text-black mb-6 group-hover:glow-icon transition-all" strokeWidth={1.5} />
+                        <h3 className="text-2xl font-bold text-black mb-3 relative">
+                          {service.title}
+                          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300 origin-left"></span>
+                        </h3>
+                        <p className="text-black/60 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                           {service.description}
                         </p>
                       </div>
                     );
                   })}
                 </div>
-              </div>
-              
-              {/* Scroll indicator */}
-              <div className="flex items-center justify-center mt-6 space-x-3">
-                <div className="w-24 h-px bg-white/20"></div>
-                <span className="text-white/40 text-xs uppercase tracking-wider">Scroll to explore</span>
-                <div className="w-24 h-px bg-white/20"></div>
+                <div className="flex items-center justify-center gap-4 mt-6 text-sm text-black/40">
+                  <div className="h-px w-8 bg-black/20"></div>
+                  <span>Scroll to explore</span>
+                  <div className="h-px w-8 bg-black/20"></div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Digital Solutions Section - Grid Layout */}
+        {/* Digital Solutions */}
         <section 
-          id="digital-section"
+          id="digital"
           ref={el => sectionRefs.current['digital'] = el}
-          className={`py-24 border-b border-white/10 bg-white/[0.01] transition-all duration-700 ${visibleSections['digital-section'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          className={`py-24 bg-black/[0.02] border-t border-black/10 transition-opacity duration-700 ${
+            visibleSections['digital'] ? 'opacity-100' : 'opacity-0'
+          }`}
         >
           <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-16 glow-text-sm">
-                Digital Solutions
-              </h2>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="max-w-7xl mx-auto">
+              <div className="mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4">Digital Solutions</h2>
+                <p className="text-xl text-black/70">Build your digital presence and grow online.</p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {digitalServices.map((service, index) => {
                   const IconComponent = service.icon;
                   return (
                     <div
                       key={index}
-                      className="group relative"
-                      style={{ transitionDelay: `${index * 100}ms` }}
+                      className="group p-8 bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl hover:border-black/30 hover:bg-white/80 transition-all duration-300 cursor-pointer relative overflow-hidden shadow-sm"
+                      style={{ animationDelay: `${index * 100}ms` }}
                     >
-                      <div className="relative overflow-hidden">
-                        {/* Animated line from bottom */}
-                        <div className="absolute left-0 bottom-0 w-0.5 h-0 bg-white group-hover:h-full transition-all duration-400 ease-out"></div>
-                        
-                        <div className="pl-8 transform group-hover:-translate-y-2 transition-all duration-300">
-                          <div className="mb-4 opacity-40 group-hover:opacity-100 transition-opacity">
-                            <IconComponent className="w-10 h-10 text-white" strokeWidth={1} />
+                      <div className="relative z-10">
+                        <div className="mb-6 opacity-50 group-hover:opacity-100 transition-opacity">
+                          <IconComponent className="w-12 h-12 text-black" strokeWidth={1.5} />
+                        </div>
+                        <h3 className="text-xl font-bold text-black mb-3 group-hover:-translate-y-1 transition-transform duration-300">
+                          {service.title}
+                        </h3>
+                        <p className="text-black/60 leading-relaxed text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          {service.description}
+                        </p>
+                      </div>
+                      <div className="absolute bottom-0 left-0 h-0 w-px bg-black group-hover:h-full transition-all duration-400 origin-bottom"></div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Business Automation */}
+        <section 
+          id="automation"
+          ref={el => sectionRefs.current['automation'] = el}
+          className={`py-24 bg-transparent border-t border-black/10 transition-opacity duration-700 ${
+            visibleSections['automation'] ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto">
+              <div className="mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4">Automation for Businesses</h2>
+                <p className="text-xl text-black/70">Work smarter with custom automation solutions.</p>
+              </div>
+
+              <div className="space-y-4">
+                {automationServices.map((service, index) => {
+                  const IconComponent = service.icon;
+                  const isExpanded = expandedCard === index;
+                  
+                  return (
+                    <div
+                      key={index}
+                      className={`group bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl overflow-hidden cursor-pointer transition-all duration-400 shadow-sm hover:border-black/30 ${
+                        isExpanded ? 'bg-white/80' : ''
+                      }`}
+                      onClick={() => setExpandedCard(isExpanded ? null : index)}
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      <div className="p-6 flex items-center justify-between">
+                        <div className="flex items-center space-x-4 flex-1">
+                          <div className="p-3 bg-black/5 rounded-xl group-hover:bg-black/10 transition-colors">
+                            <IconComponent className="w-6 h-6 text-black" strokeWidth={1.5} />
                           </div>
-                          <h3 className="text-2xl font-bold text-white mb-3">
+                          <h3 className="text-lg font-bold text-black">
                             {service.title}
                           </h3>
-                          <p className="text-white/0 group-hover:text-white/70 leading-relaxed transition-all duration-300">
+                        </div>
+                        <ChevronDown 
+                          className={`w-5 h-5 text-black/40 transition-transform duration-300 ${
+                            isExpanded ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </div>
+                      
+                      <div 
+                        className={`overflow-hidden transition-all duration-400 ${
+                          isExpanded ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
+                        }`}
+                      >
+                        <div className="px-6 pb-6 pt-2">
+                          <p className="text-black/70 leading-relaxed">
                             {service.description}
                           </p>
                         </div>
@@ -279,67 +355,40 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Business Automation Section - Expandable Cards */}
+        {/* Why Choose Us */}
         <section 
-          id="automation-section"
-          ref={el => sectionRefs.current['automation'] = el}
-          className={`py-32 border-b border-white/10 bg-white/[0.02] transition-all duration-700 ${visibleSections['automation-section'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          id="why"
+          ref={el => sectionRefs.current['why'] = el}
+          className={`py-24 bg-black/[0.02] border-t border-black/10 transition-opacity duration-700 ${
+            visibleSections['why'] ? 'opacity-100' : 'opacity-0'
+          }`}
         >
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <div className="mb-12">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 glow-text">
-                  Business Automation Solutions
-                </h2>
-                {/* Animated divider line */}
-                <div className="h-px bg-white/20 relative overflow-hidden">
-                  <div className={`absolute inset-0 bg-white origin-left ${visibleSections['automation-section'] ? 'animate-width-expand' : 'scale-x-0'}`}></div>
-                </div>
-                <p className="text-xl text-white/70 mt-6">
-                  Smart automation to reduce manual work, save costs, and scale faster.
-                </p>
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4">Why Choose Us</h2>
+                <p className="text-xl text-black/70">Six reasons to work with Black Pearl</p>
               </div>
-              
-              <div className="space-y-4 mt-16">
-                {automationServices.map((service, index) => {
-                  const IconComponent = service.icon;
-                  const isExpanded = expandedCard === index;
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {whyChooseUs.map((reason, index) => {
+                  const IconComponent = reason.icon;
                   return (
                     <div
                       key={index}
-                      onClick={() => setExpandedCard(isExpanded ? null : index)}
-                      className={`group relative bg-black border border-white/10 rounded-lg cursor-pointer transition-all duration-400 ${
-                        isExpanded 
-                          ? 'border-white/30 shadow-[0_0_30px_rgba(255,255,255,0.1)]' 
-                          : 'hover:border-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]'
-                      }`}
-                      style={{ transitionDelay: `${index * 50}ms` }}
+                      className="group text-center p-8 bg-white/60 backdrop-blur-sm border border-black/10 rounded-2xl hover:border-black/30 hover:bg-white/80 transition-all duration-300 shadow-sm"
+                      style={{ animationDelay: `${index * 80}ms` }}
                     >
-                      <div className="p-6">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center space-x-4 flex-1">
-                            <div className={`transition-all duration-300 ${isExpanded ? 'opacity-100' : 'opacity-50'}`}>
-                              <IconComponent className="w-6 h-6 text-white" strokeWidth={1.5} />
-                            </div>
-                            <h3 className={`text-xl font-bold text-white transition-all duration-300 ${isExpanded ? 'glow-text-sm' : ''}`}>
-                              {service.title}
-                            </h3>
-                          </div>
-                          <ChevronDown 
-                            className={`w-5 h-5 text-white/50 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
-                          />
-                        </div>
-                        
-                        <div className={`overflow-hidden transition-all duration-400 ${
-                          isExpanded ? 'max-h-40 opacity-100 mt-4' : 'max-h-0 opacity-0'
-                        }`}>
-                          <div className="pl-10">
-                            <p className="text-white/70 leading-relaxed">
-                              {service.description}
-                            </p>
-                          </div>
-                        </div>
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-black/5 border border-black/10 rounded-2xl mb-6 group-hover:border-black/30 transition-all">
+                        <IconComponent className="w-8 h-8 text-black" strokeWidth={1.5} />
                       </div>
+                      <h3 className="text-xl font-bold text-black mb-3 relative inline-block">
+                        {reason.title}
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300 origin-left"></span>
+                      </h3>
+                      <p className="text-black/60 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        {reason.description}
+                      </p>
                     </div>
                   );
                 })}
@@ -348,80 +397,25 @@ export default function Services() {
           </div>
         </section>
 
-        {/* Why Choose Us Section - Enhanced */}
-        <section 
-          id="why-section"
-          ref={el => sectionRefs.current['why'] = el}
-          className={`py-32 border-b border-white/10 bg-white/[0.01] transition-all duration-700 ${visibleSections['why-section'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-        >
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-20">
-                <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6 glow-text-sm">
-                  Why Choose Us
-                </h2>
-                <div className="w-32 h-px bg-white/30 mx-auto"></div>
-              </div>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {whyChooseUs.map((item, index) => (
-                  <div
-                    key={index}
-                    className="group relative p-8 bg-black border border-white/10 rounded-lg hover:border-white/30 transition-all duration-300 cursor-pointer overflow-hidden"
-                    style={{ transitionDelay: `${index * 80}ms` }}
-                  >
-                    {/* Hover background effect */}
-                    <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-all duration-300"></div>
-                    
-                    {/* Content */}
-                    <div className="relative z-10">
-                      <div className="mb-6 flex items-start space-x-4">
-                        <div className="flex-shrink-0 mt-1">
-                          <div className="w-12 h-12 border border-white/20 rounded-lg flex items-center justify-center group-hover:border-white/40 group-hover:glow-border transition-all duration-300">
-                            <Check className="w-6 h-6 text-white" strokeWidth={2} />
-                          </div>
-                        </div>
-                        <div className="flex-1">
-                          <h3 className="text-xl font-bold text-white mb-2 group-hover:glow-text-sm transition-all">
-                            {item.title}
-                          </h3>
-                          <div className="h-px w-0 bg-white group-hover:w-full transition-all duration-400"></div>
-                        </div>
-                      </div>
-                      <p className="text-white/50 group-hover:text-white/70 leading-relaxed transition-all duration-300 pl-16">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action Section - Interactive Invert */}
-        <section 
-          id="cta-section"
-          ref={el => sectionRefs.current['cta'] = el}
-          className={`py-32 transition-all duration-700 ${visibleSections['cta-section'] ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
-        >
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center space-y-12">
-              <h2 className="text-4xl lg:text-6xl font-bold text-white glow-text leading-tight">
-                Let's Build Smarter Systems<br />for Your Business
+        {/* CTA Section */}
+        <section className="py-32 bg-transparent border-t border-black/10 relative overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-black/5 glow-border rounded-full filter blur-[150px]"></div>
+          
+          <div className="container mx-auto px-6 relative z-10">
+            <div className="max-w-3xl mx-auto text-center space-y-8">
+              <h2 className="text-4xl lg:text-5xl font-bold text-black">
+                Ready to Get Started?
               </h2>
-              <div>
-                <Link
-                  href="/contact"
-                  className="group relative inline-flex items-center justify-center space-x-3 px-12 py-5 bg-black border-2 border-white text-white font-bold rounded-lg overflow-hidden text-lg transition-all duration-300 hover:scale-105"
-                >
-                  {/* Invert background on hover */}
-                  <span className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
-                  
-                  <span className="relative z-10 group-hover:text-black transition-colors duration-300">Get in Touch</span>
-                  <ArrowRight className="relative z-10 w-5 h-5 group-hover:translate-x-1 group-hover:text-black transition-all duration-300" />
-                </Link>
-              </div>
+              <p className="text-xl text-black/70">
+                Let's discuss your project and how we can help your business grow.
+              </p>
+              <Link
+                href="/contact"
+                className="group inline-flex items-center space-x-2 px-10 py-5 bg-black text-white font-semibold rounded-lg hover:shadow-2xl hover:shadow-black/30 transition-all transform hover:scale-105"
+              >
+                <span>Contact Us Today</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </div>
           </div>
         </section>
@@ -430,4 +424,3 @@ export default function Services() {
     </>
   );
 }
-
